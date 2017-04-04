@@ -39,7 +39,7 @@ $APPLICATION->SetTitle("Статьи");
         "DISPLAY_NAME" => "Y",
         "DISPLAY_PICTURE" => "Y",
         "DISPLAY_PREVIEW_TEXT" => "Y",
-        "AJAX_MODE" => "Y",
+        "AJAX_MODE" => "N",
         "IBLOCK_TYPE" => "news",
         "IBLOCK_ID" => "34",
         "NEWS_COUNT" => "6",
