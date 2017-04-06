@@ -31,6 +31,7 @@ $APPLICATION->SetTitle("Title");
         "DEFAULT_SORT" => "rank",
         "FILTER_NAME" => "",
         "arrFILTER" => array("iblock_news"),
+        "arrFILTER_iblock_news" => array(0=>"34"),
         "SHOW_WHERE" => "N",
         "arrWHERE" => array(),
         "SHOW_WHEN" => "N",
