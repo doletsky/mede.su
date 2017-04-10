@@ -6,7 +6,7 @@ $APPLICATION->SetTitle("Статьи");
     <!-- BREADCRUMBS NAVIGATION -->
 
     <div class="breadcrumb clearfix bottom-50">
-        <div class="alignleft"><a href="/">Home</a><img src="images/breadcr-dvdr.gif" alt=""><span>Статьи</span></div>
+        <div class="alignleft"><a href="/">Главная</a><img src="images/breadcr-dvdr.gif" alt=""><span>Статьи</span></div>
 
         <!-- PORTFOLIO FILTER -->
 
