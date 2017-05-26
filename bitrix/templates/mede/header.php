@@ -71,8 +71,8 @@ IncludeTemplateLangFile(__FILE__);
             <a href="/" class="alignleft"><img src="images/content/logo.png" alt=""></a>
 
             <div class="description">
-                <h1>Bringing elegance, style, etiquette and class back into vogue.</h1>
+                <h1>ћесто, в котором мы живем.</h1>
 
-                <p>To attract good fortune, spend a new coin on an old friend, share an old pleasure with a new friend, and lift up the heart of a true friend by writing his name on the wings of a dragon.</p>
+                <p>ќчень много о нас говорит место, в котором мы живем. », наоборот, место, в котором живет человек, зависит от его характера. ћы обустраиваем пространство вокруг себ€ и делаем это, не задумыва€сь.</p>
             </div>
         </div>
