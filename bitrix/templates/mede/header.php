@@ -7,6 +7,7 @@ IncludeTemplateLangFile(__FILE__);
 <head>
 	<title><?$APPLICATION->ShowTitle()?></title>
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="yandex-verification" content="6183942b3fb1d3f5" />
 <!--	<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>-->
 <!--	<link rel="stylesheet" type="text/css" href="--><?//=SITE_TEMPLATE_PATH?><!--/common.css" />-->
 
@@ -32,7 +33,44 @@ IncludeTemplateLangFile(__FILE__);
     <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/js/tipSwift/tipSwift.html" type="text/css" media="screen">
     <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/js/nivo/nivo-slider.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/js/jFlickr/jflickr_css/style.css" type="text/css" media="screen">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter44799454 = new Ya.Metrika({
+                        id:44799454,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true
+                    });
+                } catch(e) { }
+            });
 
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/44799454" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-100077242-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
     <noscript><link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/noscript.css" type="text/css" media="screen"></noscript>
     <!--[if IE 7]><link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/ie7.css" type="text/css" /><![endif]-->
 </head>
