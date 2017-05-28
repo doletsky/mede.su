@@ -6,10 +6,10 @@ IncludeTemplateLangFile(__FILE__);
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
 <head>
 	<title><?$APPLICATION->ShowTitle()?></title>
-<!--	<link rel="shortcut icon" type="image/x-icon" href="--><?//=SITE_TEMPLATE_PATH?><!--/favicon.ico" />-->
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <!--	<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>-->
 <!--	<link rel="stylesheet" type="text/css" href="--><?//=SITE_TEMPLATE_PATH?><!--/common.css" />-->
-<!--	-->
+
 	<?$APPLICATION->ShowHead();?>
 <!---->
 <!--		-->
@@ -38,7 +38,7 @@ IncludeTemplateLangFile(__FILE__);
 </head>
 
 <body>
-
+<?$APPLICATION->ShowPanel();?>
 
 
 <!-- HEADER -->
@@ -68,7 +68,7 @@ IncludeTemplateLangFile(__FILE__);
 
             <!-- LOGO AND DESCRIPTION -->
 
-            <a href="/" class="alignleft"><img src="images/content/logo.png" alt=""></a>
+            <a href="/" class="alignleft"><img src="/images/content/logo.png" alt=""></a>
 
             <div class="description">
                 <h1>Место, в котором мы живем.</h1>

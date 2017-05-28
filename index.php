@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Title");
+$APPLICATION->SetTitle("Место, в котором мы живем");
 ?>
 
     <!-- SLIDER -->
@@ -24,13 +24,13 @@ $APPLICATION->SetTitle("Title");
         "DETAIL_URL" => "",
         "PREVIEW_TRUNCATE_LEN" => "",
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "SET_TITLE" => "Y",
-        "SET_BROWSER_TITLE" => "Y",
-        "SET_META_KEYWORDS" => "Y",
-        "SET_META_DESCRIPTION" => "Y",
-        "SET_LAST_MODIFIED" => "Y",
-        "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-        "ADD_SECTIONS_CHAIN" => "Y",
+        "SET_TITLE" => "N",
+        "SET_BROWSER_TITLE" => "N",
+        "SET_META_KEYWORDS" => "N",
+        "SET_META_DESCRIPTION" => "N",
+        "SET_LAST_MODIFIED" => "N",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "ADD_SECTIONS_CHAIN" => "N",
         "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
         "PARENT_SECTION" => "",
         "PARENT_SECTION_CODE" => "",
@@ -89,13 +89,13 @@ $APPLICATION->SetTitle("Title");
         "DETAIL_URL" => "",
         "PREVIEW_TRUNCATE_LEN" => "",
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "SET_TITLE" => "Y",
-        "SET_BROWSER_TITLE" => "Y",
-        "SET_META_KEYWORDS" => "Y",
-        "SET_META_DESCRIPTION" => "Y",
+        "SET_TITLE" => "N",
+        "SET_BROWSER_TITLE" => "N",
+        "SET_META_KEYWORDS" => "N",
+        "SET_META_DESCRIPTION" => "N",
         "SET_LAST_MODIFIED" => "Y",
-        "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-        "ADD_SECTIONS_CHAIN" => "Y",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "ADD_SECTIONS_CHAIN" => "N",
         "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
         "PARENT_SECTION" => "",
         "PARENT_SECTION_CODE" => "",

@@ -1,11 +1,17 @@
 <?
 $arUrlRewrite = array(
 	array(
-		"CONDITION" => "#^/news/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/news/index.php",
+		"CONDITION" => "#^/(.*)/(.*)/#",
+		"RULE" => "CODE=$2",
+		"ID" => "bitrix:news.detail",
+		"PATH" => "/detail.php",
 	),
+    array(
+        "CONDITION" => "#^/(.*)/#",
+        "RULE" => "CODE=$1",
+        "ID" => "bitrix:news.list",
+        "PATH" => "/list.php",
+    ),
 );
 
 ?>

@@ -3,6 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Title");
 ?>
         <!-- POST WITH IMAGE -->
+
         <?
         $APPLICATION->IncludeComponent("bitrix:news.detail","mede",Array(
                 "DISPLAY_DATE" => "Y",
@@ -18,8 +19,8 @@ $APPLICATION->SetTitle("Title");
                 "AJAX_MODE" => "Y",
                 "IBLOCK_TYPE" => "news",
                 "IBLOCK_ID" => "34",
-                "ELEMENT_ID" => $_REQUEST["ID"],
-                "ELEMENT_CODE" => "",
+                "ELEMENT_ID" => "",
+                "ELEMENT_CODE" => $_REQUEST["CODE"],
                 "CHECK_DATES" => "Y",
                 "FIELD_CODE" => Array("ID", "PREVIEW_PICTURE", "TAGS"),
                 "PROPERTY_CODE" => Array("DESCRIPTION"),

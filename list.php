@@ -6,7 +6,7 @@ $APPLICATION->SetTitle("Статьи");
     <!-- BREADCRUMBS NAVIGATION -->
 
     <div class="breadcrumb clearfix bottom-50">
-        <div class="alignleft"><a href="/">Главная</a><img src="images/breadcr-dvdr.gif" alt=""><span>Статьи</span></div>
+        <div class="alignleft"><a href="/">Главная</a><img src="/images/breadcr-dvdr.gif" alt=""><span>Статьи</span></div>
 
         <!-- PORTFOLIO FILTER -->
 
@@ -62,8 +62,8 @@ $APPLICATION->SetTitle("Статьи");
         "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
         "ADD_SECTIONS_CHAIN" => "Y",
         "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
-        "PARENT_SECTION" => $_REQUEST['SECTION_ID'],
-        "PARENT_SECTION_CODE" => "",
+        "PARENT_SECTION" => "",
+        "PARENT_SECTION_CODE" => $_REQUEST['CODE'],
         "INCLUDE_SUBSECTIONS" => "Y",
         "CACHE_TYPE" => "A",
         "CACHE_TIME" => "3600",

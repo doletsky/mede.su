@@ -4,7 +4,7 @@
 
 <div class="breadcrumb clearfix bottom-50">
     <div class="alignleft">
-        <a href="/">Главная</a><img src="images/breadcr-dvdr.gif" alt=""><a href="/list.php">Статьи</a><img src="images/breadcr-dvdr.gif" alt=""><a href="<?=end($arResult['SECTION']['PATH'])['SECTION_PAGE_URL']?>"><?=end($arResult['SECTION']['PATH'])['NAME']?></a>
+        <a href="/">Главная</a><img src="/images/breadcr-dvdr.gif" alt=""><a href="/list.php">Статьи</a><img src="/images/breadcr-dvdr.gif" alt=""><a href="<?=end($arResult['SECTION']['PATH'])['SECTION_PAGE_URL']?>"><?=end($arResult['SECTION']['PATH'])['NAME']?></a>
     </div>
 </div>
 
