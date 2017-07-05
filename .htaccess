@@ -1,4 +1,8 @@
-Options -Indexes 
+Options -Indexes
+
+RewriteCond %{HTTP_HOST} ^www.placetolive.ru [NC]
+RewriteRule (.*) http://placetolive.ru/$1 [L,R=301]
+
 ErrorDocument 404 /404.php
 
 <IfModule mod_php5.c>

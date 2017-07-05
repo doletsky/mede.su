@@ -10,6 +10,7 @@
 
     <div class="copyrigts clearfix">
         <span class="owner">Copyright 2017 </span>
+        <span class="owner" style="float: right;font-size: 130%;"><a href="mailto:mail@placetolive.ru">mail@placetolive.ru</a></span>
 
         <div class="social">
             <a href="#" class="facebook"></a>
