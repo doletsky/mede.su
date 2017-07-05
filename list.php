@@ -8,16 +8,7 @@ $APPLICATION->SetTitle("Статьи");
     <div class="breadcrumb clearfix bottom-50">
         <div class="alignleft"><a href="/">Главная</a><img src="/images/breadcr-dvdr.gif" alt=""><span>Статьи</span></div>
 
-        <!-- PORTFOLIO FILTER -->
 
-<!--        <ul id="filter" class="alignright">-->
-<!--            <li class="current"><a href="#">All</a><img src="images/breadcr-dvdr.gif" alt=""></li>-->
-<!--            <li><a href="#">Category 1</a><img src="images/breadcr-dvdr.gif" alt=""></li>-->
-<!--            <li><a href="#">Category 2</a><img src="images/breadcr-dvdr.gif" alt=""></li>-->
-<!--            <li><a href="#">Category 3</a><img src="images/breadcr-dvdr.gif" alt=""></li>-->
-<!--            <li><a href="#">Category 4</a><img src="images/breadcr-dvdr.gif" alt=""></li>-->
-<!--            <li><a href="#">Category 5</a></li>-->
-<!--        </ul>-->
         <?$APPLICATION->IncludeComponent("bitrix:menu","sub_top_mede",Array(
                 "ROOT_MENU_TYPE" => "top",
                 "MAX_LEVEL" => "1",
@@ -92,7 +83,6 @@ $APPLICATION->SetTitle("Статьи");
     <!-- 3 COLUMN PORTFOLIO -->
 
 
-<!--    </div>-->
 
 
 

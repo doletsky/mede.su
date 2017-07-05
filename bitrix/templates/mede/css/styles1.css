@@ -169,11 +169,13 @@ p {
 }
 
 .col1-3 {
-	width:300px
+	width:300px;
+    height: 330px;
 }
 
 .col1-4 {
-	width:215px
+	width:220px;
+    height: 330px;
 }
 
 .col1-5 {
@@ -247,7 +249,7 @@ h6 {
 .post-img.bottom-50 div {
     font-size: 14px;
     margin-bottom: 15px;
-    line-height: 17px;
+    line-height: normal;
 }
 
 /*--------------------------- 1 - END DOCUMENT SETUP, COMMON CLASSES ------*/
