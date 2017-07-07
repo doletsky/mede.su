@@ -1,5 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<!--<pre>--><?//print_r($arResult['RAND_ELEMENT'])?><!--</pre>-->
+<!--<pre>--><?//print_r($arResult)?><!--</pre>-->
 <!-- BREADCRUMBS NAVIGATION -->
 
 <div class="breadcrumb clearfix bottom-50">
@@ -18,8 +18,11 @@
             <img src="<?=$arResult['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arResult['PREVIEW_PICTURE']['ALT']?>" title="<?=$arResult['PREVIEW_PICTURE']['ALT']?>"></a>
     </div>
     <?=$arResult['DETAIL_TEXT']?>
-</div>
 
+</div>
+    <?if(strlen($arResult['DISPLAY_PROPERTIES']['RESOURSE']['VALUE']))://?>
+        <p>Источник: <?=$arResult['DISPLAY_PROPERTIES']['RESOURSE']['VALUE']?></p>
+    <?endif?>
 </div>
 
 <div class="sidebar col1-4 omega">

@@ -23,7 +23,7 @@ $APPLICATION->SetTitle("Title");
                 "ELEMENT_CODE" => $_REQUEST["CODE"],
                 "CHECK_DATES" => "Y",
                 "FIELD_CODE" => Array("ID", "PREVIEW_PICTURE", "TAGS"),
-                "PROPERTY_CODE" => Array("DESCRIPTION"),
+                "PROPERTY_CODE" => Array("RESOURSE"),
                 "IBLOCK_URL" => "news.php?ID=#IBLOCK_ID#\"",
                 "DETAIL_URL" => "",
                 "SET_TITLE" => "Y",
