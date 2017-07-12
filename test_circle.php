@@ -5,6 +5,15 @@
     position: relative;
     float: left;
 }
+.colorP1, .colorP2, .colorP3{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid #000000;
+    margin: 20px;
+    position: relative;
+    float: left;
+}
     .container {
         top:10px;
         left: 10px;
@@ -15,6 +24,16 @@
         position: absolute;
         border: 1px solid #000000;
         z-index: 1;
+    }
+    .dragP1{
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border: 4px solid #FFFFFF;
+        border-radius: 11px;
+        z-index: 999999;
+        top: 110px;
+        left: 350px;
     }
     .c2 {
         top: 50px;
@@ -336,4 +355,23 @@
         <div class="sector r12"></div>
     </div>
     <div class="container c6"></div>
+    <div class="dragP1" id="dragP1"></div>
 </div>
+<div class="colorP1" id="colorP1"></div>
+<div class="colorP2" id="colorP2"></div>
+<div class="colorP3" id="colorP3"></div>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#dragP1").draggable();
+        $(".sector").droppable({
+//            hoverClass: "hover",
+            drop: function(event, ui) {
+                $(this).each(function(){
+                    console.log(this.visible);
+                });
+               }
+        });
+    });
+</script>
