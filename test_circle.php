@@ -25,7 +25,7 @@
         border: 1px solid #000000;
         z-index: 1;
     }
-    .dragP1{
+    .dragP1, .dragP2{
         position: absolute;
         width: 15px;
         height: 15px;
@@ -34,6 +34,9 @@
         z-index: 999999;
         top: 110px;
         left: 350px;
+    }
+    .dragP2{
+        display: none;
     }
     .c2 {
         top: 50px;
@@ -80,7 +83,6 @@
         transform-origin: left bottom;
         background: #730B0E;/*'красный 1#730B0E.2#910F13.5#EC1B24.6#EF3544.7#F26065'*/
         transform: skewY(120deg);
-
     }
     .c2 .r1 {
         background: #910F13;
@@ -356,6 +358,7 @@
     </div>
     <div class="container c6"></div>
     <div class="dragP1" id="dragP1"></div>
+    <div class="dragP2" id="dragP2"></div>
 </div>
 <div class="colorP1" id="colorP1"></div>
 <div class="colorP2" id="colorP2"></div>
@@ -364,14 +367,97 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 <script>
     $(document).ready(function() {
-        $("#dragP1").draggable();
-        $(".sector").droppable({
-//            hoverClass: "hover",
-            drop: function(event, ui) {
-                $(this).each(function(){
-                    console.log(this.visible);
-                });
-               }
+
+        arColor = {
+            xp:{//zone x>0
+               tg175:{//tg>1.75 - red
+                   110:'#F26065', 140:'#EF3544', 180:'#EC1B24', 220:'#910F13', 260:'#730B0E'
+               },
+               tg57:{
+                   110:'#F47769', 140:'#F2564D', 180:'#EE2C38', 220:'#92191F', 260:'#731316'
+               },
+                tg0:{
+                    110:'#F79B5C', 140:'#F58535', 180:'#F47115', 220:'#94430B', 260:'#6A2E07'
+                },
+                tgm57:{
+                    110:'#FABD5F', 140:'#F9B134', 180:'#F79C0E', 220:'#955D07', 260:'#804E06'
+                },
+                tgm175:{
+                    110:'#FFF765', 140:'#FFF432', 180:'#FFF100', 220:'#989000', 260:'#827B00'
+                },
+                tgmm175:{
+                    110:'#A5DB74', 140:'#7FCD51', 180:'#65C42F', 220:'#3D751A', 260:'#346415'
+                }
+            },
+            xn:{//zone x<0
+                tg175:{//tg>1.75 - green
+                    110:'#65C888', 140:'#32B76C', 180:'#00A65F', 220:'#006436', 260:'#00552D'
+                },
+                tg57:{
+                    110:'#65CBC4', 140:'#32BABC', 180:'#00AAAF', 220:'#00656A', 260:'#00555A'
+                },
+                tg0:{
+                    110:'#6285CC', 140:'#3871C1', 180:'#1B62B7', 220:'#0F386B', 260:'#0C2F5B'
+                },
+                tgm57:{
+                    110:'#535BB2', 140:'#4346A4', 180:'#293D9B', 220:'#162257', 260:'#121C48'
+                },
+                tgm175:{
+                    110:'#7D5AB3', 140:'#6D399E', 180:'#542790', 220:'#311550', 260:'#291142'
+                },
+                tgmm175:{
+                    110:'#BD65B9', 140:'#A83AA3', 180:'#A0138E', 220:'#610A4E', 260:'#530840'
+                }
+            }
+        }
+
+        $("#dragP1").draggable({
+            stop: function(event, ui) {
+                var x=ui.offset.left-307;
+                var y=307-ui.offset.top;
+                var r=Math.sqrt(x*x+y*y);
+                var tg=y/x;
+                console.log(x+", "+y+", R="+r+", tg="+tg);
+                //limit max radius
+                var corR=0;
+                if(r>292){
+                    r=292;
+                    corR=1;
+                }
+                if(r<110){
+                    r=110;
+                    corR=1;
+                }
+                var modX=1; if(x<0) modX=-1;
+                var modY=1; if(y<0) modY=-1;
+                if(corR==1){
+                    y=modX*r*Math.sin(Math.atan(tg));
+                    x=modX*r*Math.cos(Math.atan(tg));
+                    $("#dragP1").css("left", Math.floor(x+300));
+                    $("#dragP1").css("top", Math.floor(300-y));
+                    console.log(x+", "+y+", R="+r+", tg="+tg);
+                    corR=0;
+                }
+                var argX=(modX>0)?'xp':'xn';
+                var argTg=(tg>1.75)?'tg175':
+                    (tg>0.57)?'tg57':
+                        (tg>0)?'tg0':
+                            (tg>-0.57)?'tgm57':
+                                (tg>-1.75)?'tgm175':'tgmm175';
+                var argR=(r>260)?'260':
+                    (r>220)?'220':
+                        (r>180)?'180':
+                            (r>140)?'140':'110';
+                $('#colorP1').css('background-color', arColor[argX][argTg][argR]);
+
+                //position other points
+                var x2=r*Math.sin(Math.asin(x/r)-0.52);
+                var y2=r*Math.cos(Math.acos(y/r)-0.52);
+                $("#dragP2").css("left", Math.floor(-1*x2+300));
+                $("#dragP2").css("top", Math.floor(300-(-1*y2)));
+                $("#dragP2").css("display", "block");
+                console.log(arColor[argX][argTg]);
+            }
         });
     });
 </script>
