@@ -451,12 +451,19 @@
                 $('#colorP1').css('background-color', arColor[argX][argTg][argR]);
 
                 //position other points
-                var x2=r*Math.sin(Math.asin(x/r)-0.52);
-                var y2=r*Math.cos(Math.acos(y/r)-0.52);
-                $("#dragP2").css("left", Math.floor(-1*x2+300));
-                $("#dragP2").css("top", Math.floor(300-(-1*y2)));
+                var tmpX=1.73/tg+1;
+                var tmpY=1.73-1/tg;
+                var tg2=tmpY/tmpX;
+
+                var x2=r*Math.sin(Math.atan(1/tg2));  ///Math.sqrt(1+Math.sqrt(tg2*tg2)); //r*Math.sin(Math.asin(x/r)-0.52);
+                var y2=Math.sqrt(r*r-x2*x2);//*tg2/Math.sqrt(tg2*tg2); //r*Math.cos(Math.acos(y/r)-0.52);
+                if(y2<x2)y2=y2*tg2/Math.sqrt(tg2*tg2);
+                else x2=x2*tg2/Math.sqrt(tg2*tg2);
+                var tmpR=Math.sqrt(x2*x2+y2*y2);
+                $("#dragP2").css("left", Math.floor(x2+300));
+                $("#dragP2").css("top", Math.floor(300-(y2)));
                 $("#dragP2").css("display", "block");
-                console.log(arColor[argX][argTg]);
+                console.log(x2+", "+y2+", "+r+", "+tmpR+", "+tg2);
             }
         });
     });
