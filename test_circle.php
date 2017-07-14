@@ -359,6 +359,7 @@
     <div class="container c6"></div>
     <div class="dragP1" id="dragP1"></div>
     <div class="dragP2" id="dragP2"></div>
+    <div class="dragP2" id="dragP3"></div>
 </div>
 <div class="colorP1" id="colorP1"></div>
 <div class="colorP2" id="colorP2"></div>
@@ -411,6 +412,35 @@
             }
         }
 
+function posCoPoint(x, y, r, tg, tg2, id){
+    var x2=r*Math.sin(Math.atan(1/tg2));  ///Math.sqrt(1+Math.sqrt(tg2*tg2)); //r*Math.sin(Math.asin(x/r)-0.52);
+    var y2=Math.sqrt(r*r-x2*x2);//*tg2/Math.sqrt(tg2*tg2); //r*Math.cos(Math.acos(y/r)-0.52);
+    var modX=Math.sqrt(x*x);
+    var modY=Math.sqrt(y*y);
+    var flagChange=0;
+
+    if(modX>modY){
+        if(x/modX!=x2/Math.sqrt(x2*x2)){
+            y2=y2*(-1);
+            x2=x2*(-1);
+        }
+    }else{
+        if(y/modY!=y2/Math.sqrt(y2*y2)){
+            y2=y2*(-1);
+            x2=x2*(-1);
+        }
+    }
+
+    y2=y2*(-1);
+    x2=x2*(-1);
+
+    var tmpR=Math.sqrt(x2*x2+y2*y2);
+    $(id).css("left", Math.floor(x2+300));
+    $(id).css("top", Math.floor(300-(y2)));
+    $(id).css("display", "block");
+                    console.log(x2+", "+y2+", "+r+", "+tmpR+", "+tg2+", "+tg2/Math.sqrt(tg2*tg2));
+}
+
         $("#dragP1").draggable({
             stop: function(event, ui) {
                 var x=ui.offset.left-307;
@@ -455,15 +485,14 @@
                 var tmpY=1.73-1/tg;
                 var tg2=tmpY/tmpX;
 
-                var x2=r*Math.sin(Math.atan(1/tg2));  ///Math.sqrt(1+Math.sqrt(tg2*tg2)); //r*Math.sin(Math.asin(x/r)-0.52);
-                var y2=Math.sqrt(r*r-x2*x2);//*tg2/Math.sqrt(tg2*tg2); //r*Math.cos(Math.acos(y/r)-0.52);
-                if(y2<x2)y2=y2*tg2/Math.sqrt(tg2*tg2);
-                else x2=x2*tg2/Math.sqrt(tg2*tg2);
-                var tmpR=Math.sqrt(x2*x2+y2*y2);
-                $("#dragP2").css("left", Math.floor(x2+300));
-                $("#dragP2").css("top", Math.floor(300-(y2)));
-                $("#dragP2").css("display", "block");
-                console.log(x2+", "+y2+", "+r+", "+tmpR+", "+tg2);
+                posCoPoint(x, y, r, tg, tg2, "#dragP2");
+
+                var tmpX=1.73/tg-1;
+                var tmpY=1.73+1/tg;
+                var tg2=tmpY/tmpX;
+
+                posCoPoint(x, y, r, tg, tg2, "#dragP3");
+
             }
         });
     });
