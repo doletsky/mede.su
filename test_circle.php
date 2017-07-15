@@ -5,14 +5,31 @@
     position: relative;
     float: left;
 }
-.colorP1, .colorP2, .colorP3{
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border: 1px solid #000000;
+.colorPBox{
     margin: 20px;
     position: relative;
     float: left;
+    width: 400px;
+    height: 400px;
+}
+.colorP2, .colorP3{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #000000;
+    position: absolute;
+    z-index: 999;
+    left: 150px;
+}
+.colorP1{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 99;
+    top: 40px;
+    border: 1px solid #000000;
+}
+.colorP3{
+    top: 200px;
 }
     .container {
         top:10px;
@@ -37,6 +54,7 @@
     }
     .dragP2{
         display: none;
+        border: 2px solid #FFFFFF;
     }
     .c2 {
         top: 50px;
@@ -356,14 +374,29 @@
         <div class="sector r11"></div>
         <div class="sector r12"></div>
     </div>
-    <div class="container c6"></div>
+    <div class="container c6">
+        <div class="triod" id="tiod" style="
+	    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 180px solid grey;
+    left: 50px;
+    position: relative;
+">
+
+        </div>
+    </div>
     <div class="dragP1" id="dragP1"></div>
     <div class="dragP2" id="dragP2"></div>
     <div class="dragP2" id="dragP3"></div>
 </div>
-<div class="colorP1" id="colorP1"></div>
-<div class="colorP2" id="colorP2"></div>
-<div class="colorP3" id="colorP3"></div>
+<div class="colorPBox">
+    <div class="colorP1" id="colorP1"></div>
+    <div class="colorP2" id="colorP2"></div>
+    <div class="colorP3" id="colorP3"></div>
+</div>
+
 <script src="js/jquery-1.7.1.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 <script>
@@ -412,7 +445,7 @@
             }
         }
 
-function posCoPoint(x, y, r, tg, tg2, id){
+function posCoPoint(x, y, r, tg, tg2, id, idColorBox){
     var x2=r*Math.sin(Math.atan(1/tg2));  ///Math.sqrt(1+Math.sqrt(tg2*tg2)); //r*Math.sin(Math.asin(x/r)-0.52);
     var y2=Math.sqrt(r*r-x2*x2);//*tg2/Math.sqrt(tg2*tg2); //r*Math.cos(Math.acos(y/r)-0.52);
     var modX=Math.sqrt(x*x);
@@ -438,8 +471,24 @@ function posCoPoint(x, y, r, tg, tg2, id){
     $(id).css("left", Math.floor(x2+300));
     $(id).css("top", Math.floor(300-(y2)));
     $(id).css("display", "block");
-                    console.log(x2+", "+y2+", "+r+", "+tmpR+", "+tg2+", "+tg2/Math.sqrt(tg2*tg2));
+    getColor(x2/Math.sqrt(x2*x2), tg2, r, idColorBox);
+//                    console.log(x2+", "+y2+", "+r+", "+tmpR+", "+tg2+", "+tg2/Math.sqrt(tg2*tg2));
 }
+
+        function getColor(modX, tg, r, id){
+
+            var argX=(modX>0)?'xp':'xn';
+            var argTg=(tg>1.75)?'tg175':
+                (tg>0.57)?'tg57':
+                    (tg>0)?'tg0':
+                        (tg>-0.57)?'tgm57':
+                            (tg>-1.75)?'tgm175':'tgmm175';
+            var argR=(r>260)?'260':
+                (r>220)?'220':
+                    (r>180)?'180':
+                        (r>140)?'140':'110';
+            $(id).css('background-color', arColor[argX][argTg][argR]);
+        }
 
         $("#dragP1").draggable({
             stop: function(event, ui) {
@@ -458,8 +507,8 @@ function posCoPoint(x, y, r, tg, tg2, id){
                     r=110;
                     corR=1;
                 }
-                var modX=1; if(x<0) modX=-1;
-                var modY=1; if(y<0) modY=-1;
+                var modX=x/Math.sqrt(x*x);
+                var modY=y/Math.sqrt(y*y);
                 if(corR==1){
                     y=modX*r*Math.sin(Math.atan(tg));
                     x=modX*r*Math.cos(Math.atan(tg));
@@ -468,30 +517,20 @@ function posCoPoint(x, y, r, tg, tg2, id){
                     console.log(x+", "+y+", R="+r+", tg="+tg);
                     corR=0;
                 }
-                var argX=(modX>0)?'xp':'xn';
-                var argTg=(tg>1.75)?'tg175':
-                    (tg>0.57)?'tg57':
-                        (tg>0)?'tg0':
-                            (tg>-0.57)?'tgm57':
-                                (tg>-1.75)?'tgm175':'tgmm175';
-                var argR=(r>260)?'260':
-                    (r>220)?'220':
-                        (r>180)?'180':
-                            (r>140)?'140':'110';
-                $('#colorP1').css('background-color', arColor[argX][argTg][argR]);
+                getColor(modX,tg,r,'#colorP1');
 
                 //position other points
                 var tmpX=1.73/tg+1;
                 var tmpY=1.73-1/tg;
                 var tg2=tmpY/tmpX;
 
-                posCoPoint(x, y, r, tg, tg2, "#dragP2");
+                posCoPoint(x, y, r, tg, tg2, "#dragP2", '#colorP2');
 
                 var tmpX=1.73/tg-1;
                 var tmpY=1.73+1/tg;
                 var tg2=tmpY/tmpX;
 
-                posCoPoint(x, y, r, tg, tg2, "#dragP3");
+                posCoPoint(x, y, r, tg, tg2, "#dragP3", '#colorP3');
 
             }
         });
