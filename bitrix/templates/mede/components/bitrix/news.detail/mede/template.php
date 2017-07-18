@@ -1,4 +1,9 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?
+$APPLICATION->AddHeadString('<meta property="og:description" content="'.str_replace(array("\r", "\n"), "",TruncateText(strip_tags($arResult['DETAIL_TEXT']),300)).'" />');
+$APPLICATION->AddHeadString('<meta property="og:image"  content="http://placetolive.ru'.$arResult['PREVIEW_PICTURE']['SRC'].'" />');
+$APPLICATION->SetPageProperty("description", str_replace(array("\r", "\n"), "",TruncateText(strip_tags($arResult['DETAIL_TEXT']),300)));
+?>
 <!--<pre>--><?//print_r($arResult)?><!--</pre>-->
 <!-- BREADCRUMBS NAVIGATION -->
 

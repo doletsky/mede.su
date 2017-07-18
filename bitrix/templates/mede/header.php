@@ -8,6 +8,10 @@ IncludeTemplateLangFile(__FILE__);
 	<title><?$APPLICATION->ShowTitle()?></title>
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="yandex-verification" content="6183942b3fb1d3f5" />
+    <meta property="og:url" content="http://placetolive.ru<?=$APPLICATION->GetCurDir();?>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="<?$APPLICATION->ShowTitle()?>" />
+
 <!--	<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>-->
 <!--	<link rel="stylesheet" type="text/css" href="--><?//=SITE_TEMPLATE_PATH?><!--/common.css" />-->
 
