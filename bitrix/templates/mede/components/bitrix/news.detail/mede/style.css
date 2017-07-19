@@ -57,3 +57,14 @@ div.news-detail img.detail_picture
     margin: 0 auto;
     display: block;
 }
+
+.leftBox{
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    margin-left: -609px;
+    width: 59px;
+    height: 25px;
+    background-color: #fff;
+    padding: 5px;
+}

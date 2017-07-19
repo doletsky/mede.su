@@ -1,11 +1,12 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<?
-$APPLICATION->AddHeadString('<meta property="og:description" content="'.str_replace(array("\r", "\n"), "",TruncateText(strip_tags($arResult['DETAIL_TEXT']),300)).'" />');
-$APPLICATION->AddHeadString('<meta property="og:image"  content="http://placetolive.ru'.$arResult['PREVIEW_PICTURE']['SRC'].'" />');
-$APPLICATION->SetPageProperty("description", str_replace(array("\r", "\n"), "",TruncateText(strip_tags($arResult['DETAIL_TEXT']),300)));
-?>
+
 <!--<pre>--><?//print_r($arResult)?><!--</pre>-->
 <!-- BREADCRUMBS NAVIGATION -->
+<div class="leftBox">
+    <div class="social">
+        <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://placetolive.ru<?=$APPLICATION->GetCurDir();?>" class="facebook" style="background-color: rgb(136, 136, 136);"><span style="left: 50%; right: 50%; top: 50%; bottom: 50%;"></span></a>
+    </div>
+</div>
 
 <div class="breadcrumb clearfix bottom-50">
     <div class="alignleft">
