@@ -4,7 +4,8 @@
 <!-- BREADCRUMBS NAVIGATION -->
 <div class="leftBox">
     <div class="social">
-        <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://placetolive.ru<?=$APPLICATION->GetCurDir();?>" class="facebook" style="background-color: rgb(136, 136, 136);"><span style="left: 50%; right: 50%; top: 50%; bottom: 50%;"></span></a>
+        <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://placetolive.ru<?=$APPLICATION->GetCurDir();?>" class="facebook" style="background-color: rgb(136, 136, 136);"><span style="left: 50%; right: 50%; top: 50%; bottom: 50%;"></span></a><br>
+        <a target="_blank" href="https://vk.com/share.php?url=http://placetolive.ru<?=$APPLICATION->GetCurDir();?>" class="vk" style="background-color: rgb(136, 136, 136);"><span style="left: 50%; right: 50%; top: 50%; bottom: 50%;"></span></a>
     </div>
 </div>
 

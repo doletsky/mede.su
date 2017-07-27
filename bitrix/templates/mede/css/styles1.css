@@ -604,7 +604,8 @@ a.prettyPhoto {
 	background-color:#c4c4c4;
 	background-repeat:no-repeat;
 	background-position:50% 50%;
-	border-radius:50px
+	border-radius:50px;
+    margin-bottom: 5px;
 }
 
 .social a span,.team-social a span {
@@ -622,8 +623,8 @@ a.prettyPhoto {
 	background-image:url(../images/social/skype.png)
 }
 
-.social a.twitter,.social a.twitter span,.team-social a.twitter,.team-social a.twitter span {
-	background-image:url(../images/social/twitter.png)
+.social a.vk,.social a.vk span,.team-social a.vk,.team-social a.vk span {
+	background-image:url(../images/social/vk.png)
 }
 
 .social a.facebook,.social a.facebook span,.team-social a.facebook,.team-social a.facebook span {
