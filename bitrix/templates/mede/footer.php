@@ -10,11 +10,12 @@
 
     <div class="copyrigts clearfix">
         <span class="owner">Copyright 2017 </span>
+        <span class="owner"><a href="http://yandex.ru/cy?base=0&amp;host=placetolive.ru" style="display: none;"><img src="http://www.yandex.ru/cycounter?placetolive.ru" width="88" height="31" alt="Индекс цитирования" border="0" /></a></span>
         <span class="owner" style="float: right;font-size: 130%;"><a href="mailto:mail@placetolive.ru">mail@placetolive.ru</a></span>
 
-        <div class="social">
-            <a href="#" class="facebook"></a>
-        </div>
+<!--        <div class="social">-->
+<!--            <a href="#" class="facebook"></a>-->
+<!--        </div>-->
     </div>
 </div>
 </div>
